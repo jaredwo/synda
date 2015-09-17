@@ -9,7 +9,7 @@ usage ()
 {
     cat >&2 << EOF
 
-USAGE: $(basename $0): [-a] [-b] [-h] [ MODULE ]
+USAGE: ./$(basename $0): [-a] [-b] [-h] [ MODULE ]
 
 POSITIONAL ARGS:
    MODULE       Specify which module(s) to build
@@ -116,10 +116,10 @@ fi
 
 
 # env. check
-if [ -z "$SYNDA_SRC_ROOT" ]; then
-    echo "Error: SYNDA_SRC_ROOT is not set"
-    exit 1
-fi
+#if [ -z "$SYNDA_SRC_ROOT" ]; then
+#    echo "Error: SYNDA_SRC_ROOT is not set"
+#    exit 1
+#fi
 if [ -z "$SYNDA_WEBHOST" ]; then
     echo "Error: SYNDA_WEBHOST is not set"
     exit 1
@@ -128,7 +128,8 @@ fi
 
 # init
 webhost=$SYNDA_WEBHOST
-src_snapshot_root=$SYNDA_SRC_ROOT
+#src_snapshot_root=$SYNDA_SRC_ROOT # obsolete
+src_snapshot_root=$(dirname $(pwd))
 sdt_src=$src_snapshot_root/sdt
 sdp_src=$src_snapshot_root/sdp
 sdt_version_prod="3.0"
