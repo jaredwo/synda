@@ -1,11 +1,12 @@
-#!/usr/bin/env python
+#!/usr/share/python/synda/sdt/bin/python
+#jfp was
 # -*- coding: ISO-8859-1 -*-
 
 ##################################
 #  @program        synda
 #  @description    climate models data transfer program
-#  @copyright      Copyright “(c)2009 Centre National de la Recherche Scientifique CNRS. 
-#                             All Rights Reserved”
+#  @copyright      Copyright "(c)2009 Centre National de la Recherche Scientifique CNRS. 
+#                             All Rights Reserved"
 #  @license        CeCILL (https://raw.githubusercontent.com/Prodiguer/synda/master/sdt/doc/LICENSE)
 ##################################
 
@@ -143,7 +144,7 @@ def get_dataset_files(d,conn=sddb.conn,limit=None):
     return files
 
 def update_file(file,commit=True,conn=sddb.conn):
-    keys=['status','error_msg','sdget_status','sdget_error_msg','start_date','end_date','duration','rate']
+    keys=['status','error_msg','sdget_status','sdget_error_msg','start_date','end_date','duration','rate','priority']
 
     # 'url' need to be present when 'sdnexturl' feature is enabled
     if sdconfig.next_url_on_error:
