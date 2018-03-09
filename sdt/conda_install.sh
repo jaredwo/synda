@@ -4,7 +4,7 @@ conda create -y -c defaults -c conda-forge --override-channels -n sdt python=2 p
 source activate sdt
 pip install pycountry
 
-CONDA_ROOT=`conda info | grep root | sed 's/ (writable)//' | sed 's/root environment : //' | sed 's/^ *//;s/ *$//'`
+CONDA_ROOT=`conda info --base`
 SDT_ENV="${CONDA_ROOT}/envs/sdt"
 SDT_LIB="${SDT_ENV}/lib/sd"
 SDT_CONF_FILE="${SDT_ENV}/conf/sdt.conf"
