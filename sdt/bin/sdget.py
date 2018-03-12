@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: ISO-8859-1 -*-
 
+
 ##################################
 #  @program        synda
 #  @description    climate models data transfer program
@@ -20,16 +21,12 @@ Notes
       url download test.
 """
 
+from synda import sdapp, sdconfig, sdutils, sdconst, sdget_urllib
+from synda.sdtools import print_stderr
 import argparse
+import json
 import os
 import sys
-import json
-import sdapp
-import sdconfig
-import sdutils
-import sdconst
-import sdget_urllib
-from sdtools import print_stderr
 
 def download(url,full_local_path,debug=False,http_client=sdconfig.http_client,timeout=sdconst.ASYNC_DOWNLOAD_HTTP_TIMEOUT,verbosity=0,buffered=True,hpss=False):
     killed=False

@@ -21,19 +21,12 @@ Notes
     - remove '-W ignore' once only Python 2.7+. TAG5J43K
 """
 
-import sys
+from synda import sdapp, sdconst, sdi18n, sdsubparser, sdtools, sdconfig, sdpermission, sdexception
 import argparse
-import sdapp
-import sdconst
-import sdi18n
-import sdsubparser
-import sdtools
-import sdconfig
-import sdpermission
-import sdexception
+import sys
 
 def set_stream_type(args):
-    import sddeferredbefore
+    from synda import sddeferredbefore
 
     # Set the sdtream type (aka search-API 'type').
     #
@@ -113,9 +106,9 @@ if __name__ == '__main__':
         sys.exit(0)
 
 
-    import sdtsaction
+    from synda import sdtsaction
     if args.subcommand in sdtsaction.actions.keys():
-        import syndautils
+        from synda import syndautils
 
         # hack to explode id in individual facets (experimental)
         if args.subcommand=='search':
@@ -153,7 +146,7 @@ if __name__ == '__main__':
 
         # infer type if not set by user
         if args.type_ is None:
-            import sdtype
+            from synda import sdtype
             args.type_=sdtype.infer_display_type(stream)
 
         args.stream=stream # TODO: pass 'stream' object downstream as a standalone argument (not inside args)
@@ -169,7 +162,7 @@ if __name__ == '__main__':
 
         sys.exit(status)
 
-    import sdtiaction
+    from synda import sdtiaction
     if args.subcommand in sdtiaction.actions.keys():
         status=sdtiaction.actions[args.subcommand](args)
 

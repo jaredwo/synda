@@ -16,10 +16,10 @@ Note
     in 'raw' mode or 'line' mode (not 'indent' mode)
 """
 
-import sys
+from synda import sdprint
 import argparse
 import json
-import sdprint
+import sys
 
 def run(lines):
     files=[]

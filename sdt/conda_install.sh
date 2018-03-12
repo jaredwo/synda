@@ -22,7 +22,7 @@ ln -fs ${SDT_LIB}/sdget.sh sdget.sh
 ln -fs ${SDT_LIB}/sdgetg.sh sdgetg.sh
 ln -fs ${SDT_LIB}/sdlogon.sh sdlogon.sh
 ln -fs ${SDT_LIB}/sdparsewgetoutput.sh sdparsewgetoutput.sh
-ln -fs ${SDT_LIB}/synda.py synda
+ln -fs ${SDT_LIB}/synda_cmd.py synda
 ln -fs ${SDT_LIB}/sdtc.py sdtc
 ln -fs ${SDT_LIB}/sdconfig.py sdconfig
 ln -fs ${SDT_LIB}/sdget.py sdget
