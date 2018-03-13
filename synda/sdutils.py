@@ -82,7 +82,8 @@ def get_status(args, **kwargs):
     """
 
     kwargs['universal_newlines']=False
-
+    kwargs['env'] = {'PATH':os.environ['PATH']}
+    
     p = subprocess.Popen(args, **kwargs)
 
     p.wait()

@@ -2,7 +2,7 @@
 ##################################
 #  @program        synda
 #  @description    climate models data transfer program
-#  @copyright      Copyright “(c)2009 Centre National de la Recherche Scientifique CNRS. 
+#  @copyright      Copyright “(c)2009 Centre National de la Recherche Scientifique CNRS.
 #                             All Rights Reserved”
 #  @license        CeCILL (https://raw.githubusercontent.com/Prodiguer/synda/master/sdt/doc/LICENSE)
 ##################################
@@ -13,7 +13,7 @@
 #  - This script works in two different modes
 #      - NORMAL MODE (default)
 #          - verbosity is set to 0 in this mode
-#          - wget output is analyzed by 'sdparsewgetoutput.sh' script 
+#          - wget output is analyzed by 'sdparsewgetoutput.sh' script
 #          - nothing is written on stdout
 #          - short error message is printed on stderr (one line max terminated by EOL),
 #            so to be logged and/or inserted in DB on the python side
@@ -22,7 +22,7 @@
 #          - this mode is enabled when verbosity is equal or greater than 1 (at least one '-v' option)
 #          - many infos are dumped on stderr in realtime (wget output (including download progress), sdget.sh msg)
 #          - in this mode, wget output IS NOT analyzed by 'sdparsewgetoutput.sh'
-#          - verbosity level overview 
+#          - verbosity level overview
 #              - 0 - no info displayed except if transfer fails
 #              - 1 - pre-transfer info not displayed and progress bar and post-transfer info displayed (beware: this mode may hide some error messages)
 #              - 2 - info displayed and progress dot
@@ -37,7 +37,7 @@
 #  3 => Incorrect arguments
 #  4 => Incorrect environment
 #       (fatal error, make the daemon to stop)
-#  6 => Error occurs while retrieving the X509 certificate 
+#  6 => Error occurs while retrieving the X509 certificate
 #  7 => This script has been killed (SIGINT or SIGTERM)
 # 12 => Permission error (e.g. CMIP5-RESEARCH role missing)
 # 20 => 403 Forbidden
@@ -160,7 +160,7 @@ export LC_ALL=C
 
 # set path
 
-export PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:$PATH
 
 # set flag
 
@@ -275,7 +275,7 @@ if [ $parse_output -eq 1 ]; then
     #  - we need 2 redirects (to go the the IDP to verify user identity and come back)
     #
     MAX_REDIRECT=2
- 
+
     WGETOPT="$WGETOPT --tries=$WGET_TRIES --max-redirect=$MAX_REDIRECT "
 fi
 
@@ -419,7 +419,7 @@ if [ $verbosity -gt 0 ]; then
 
         # display wget cmd on stderr
         echo $WGET_CMD 1>&2
-        
+
         # when verbosity is 2, some non-important error message are removed from output
 
         # to see all wget messages, prefer switching to verbosity level 3
@@ -498,7 +498,7 @@ if [ $wget_status -ne 0 ]; then
     else
         # when we are here, we are not sure it's a 'Permission error' (it can be any error), but as 'Permission error'
         # is the most frequent error, we advise the user the verify that point.
- 
+
         err "Transfer failed with error $status (did you subscribe to the required role/group ? (e.g. cmip5_research, cordex_research))"
     fi
 
