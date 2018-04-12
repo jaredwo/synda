@@ -45,12 +45,6 @@ def critical(code,message,stdout=False,stderr=False,logfile=True,logger_name=Non
     log(code,message,logging.CRITICAL,stdout,stderr,logfile,logger_name)
 
 def log(code,message,level,stdout=False,stderr=False,logfile=True,logger_name=None):
-    # check code length
-    if len(code)!=12:
-        raise SDException("SYNDALOG-002","%s have an incorrect length"%code)
-
-    # retrieve modulecode part of code
-    modulecode=code[0:8]
 
     if level>=get_verbosity_level():
 
