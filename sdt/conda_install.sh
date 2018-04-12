@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-conda create -y -c defaults -c conda-forge --override-channels -n sdt python=2 pyOpenSSL=17.5 psutil humanize tabulate progress json-rpc python-daemon retrying requests beautifulsoup4 texttable pillow reportlab myproxyclient
+conda create -y -c defaults -c conda-forge --override-channels -n sdt python=2 pyOpenSSL=17.5 psutil humanize tabulate progress json-rpc python-daemon retrying requests beautifulsoup4 texttable pillow reportlab myproxyclient pandas tqdm
 source activate sdt
 pip install pycountry
 
